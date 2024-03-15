@@ -1,0 +1,3818 @@
+- timestamp:
+    secs: 0
+    nanos: 0
+  entry: !metadata
+    creator: GameController
+    version: 1
+    timestamp: 2024-03-15T19:15:11.732260823Z
+    params:
+      competition:
+        name: Champions Cup
+        challengeMode: null
+        playersPerTeam: 7
+        penalties:
+          noPenalty:
+            duration:
+              secs: 0
+              nanos: 0
+            incremental: false
+          substitute:
+            duration:
+              secs: 0
+              nanos: 0
+            incremental: false
+          pickedUp:
+            duration:
+              secs: 45
+              nanos: 0
+            incremental: false
+          illegalPositionInSet:
+            duration:
+              secs: 15
+              nanos: 0
+            incremental: false
+          illegalPosition:
+            duration:
+              secs: 45
+              nanos: 0
+            incremental: true
+          motionInSet:
+            duration:
+              secs: 15
+              nanos: 0
+            incremental: false
+          fallenInactive:
+            duration:
+              secs: 45
+              nanos: 0
+            incremental: false
+          localGameStuck:
+            duration:
+              secs: 45
+              nanos: 0
+            incremental: false
+          ballHolding:
+            duration:
+              secs: 45
+              nanos: 0
+            incremental: true
+          playerStance:
+            duration:
+              secs: 45
+              nanos: 0
+            incremental: true
+          playerPushing:
+            duration:
+              secs: 45
+              nanos: 0
+            incremental: true
+          playingWithArmsHands:
+            duration:
+              secs: 45
+              nanos: 0
+            incremental: true
+          leavingTheField:
+            duration:
+              secs: 45
+              nanos: 0
+            incremental: true
+        penaltyDurationIncrement:
+          secs: 10
+          nanos: 0
+        setPlays:
+          noSetPlay:
+            duration:
+              secs: 0
+              nanos: 0
+            readyDuration:
+              secs: 0
+              nanos: 0
+          kickOff:
+            duration:
+              secs: 10
+              nanos: 0
+            readyDuration:
+              secs: 45
+              nanos: 0
+          kickIn:
+            duration:
+              secs: 30
+              nanos: 0
+            readyDuration:
+              secs: 0
+              nanos: 0
+          goalKick:
+            duration:
+              secs: 30
+              nanos: 0
+            readyDuration:
+              secs: 0
+              nanos: 0
+          cornerKick:
+            duration:
+              secs: 30
+              nanos: 0
+            readyDuration:
+              secs: 0
+              nanos: 0
+          pushingFreeKick:
+            duration:
+              secs: 30
+              nanos: 0
+            readyDuration:
+              secs: 0
+              nanos: 0
+          penaltyKick:
+            duration:
+              secs: 30
+              nanos: 0
+            readyDuration:
+              secs: 30
+              nanos: 0
+        halfDuration:
+          secs: 600
+          nanos: 0
+        halfTimeBreakDuration:
+          secs: 600
+          nanos: 0
+        timeoutDuration:
+          secs: 300
+          nanos: 0
+        timeoutsPerTeam: 1
+        refereeTimeoutDuration:
+          secs: 600
+          nanos: 0
+        messagesPerTeam: 1200
+        messagesPerTeamPerExtraMinute: 60
+        mercyRuleScoreDifference: 10
+        penaltyShots: 3
+        suddenDeathPenaltyShots: 3
+        penaltyShotDuration:
+          secs: 30
+          nanos: 0
+        delayAfterGoal:
+          secs: 15
+          nanos: 0
+        delayAfterPlaying:
+          secs: 15
+          nanos: 0
+      game:
+        teams:
+          home:
+            number: 5
+            fieldPlayerColor: black
+            goalkeeperColor: purple
+          away:
+            number: 0
+            fieldPlayerColor: blue
+            goalkeeperColor: yellow
+        long: false
+        kickOffSide: home
+        sideMapping: homeDefendsLeftGoal
+- timestamp:
+    secs: 9
+    nanos: 965588338
+  entry: !action
+    source: user
+    action:
+      type: startSetPlay
+      args:
+        side: home
+        setPlay: kickOff
+- timestamp:
+    secs: 9
+    nanos: 965588338
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: ready
+    setPlay: kickOff
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 600
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: !started
+      remaining:
+      - 45
+      - 0
+      runCondition: always
+      behaviorAtZero: !expire
+      - type: waitForSetPlay
+        args: null
+    timeoutRewindTimer: !started
+      remaining:
+      - 0
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 17
+    nanos: 213664491
+  entry: !action
+    source: user
+    action:
+      type: penalize
+      args:
+        side: home
+        player: 1
+        call: pushing
+- timestamp:
+    secs: 17
+    nanos: 213664491
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: ready
+    setPlay: kickOff
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 600
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: !started
+      remaining:
+      - 37
+      - 751923847
+      runCondition: always
+      behaviorAtZero: !expire
+      - type: waitForSetPlay
+        args: null
+    timeoutRewindTimer: !started
+      remaining:
+      - 0
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 1
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 45
+            - 0
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 38
+    nanos: 747870710
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 2
+- timestamp:
+    secs: 38
+    nanos: 747870710
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: initial
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 600
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 44
+    nanos: 475728760
+  entry: !action
+    source: user
+    action:
+      type: startSetPlay
+      args:
+        side: home
+        setPlay: kickOff
+- timestamp:
+    secs: 44
+    nanos: 475728760
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: ready
+    setPlay: kickOff
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 600
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: !started
+      remaining:
+      - 45
+      - 0
+      runCondition: always
+      behaviorAtZero: !expire
+      - type: waitForSetPlay
+        args: null
+    timeoutRewindTimer: !started
+      remaining:
+      - 0
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 45
+    nanos: 752173002
+  entry: !action
+    source: user
+    action:
+      type: waitForSetPlay
+      args: null
+- timestamp:
+    secs: 45
+    nanos: 752173002
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: set
+    setPlay: kickOff
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 600
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: !started
+      remaining:
+      - 0
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 47
+    nanos: 167094634
+  entry: !action
+    source: user
+    action:
+      type: freeSetPlay
+      args: null
+- timestamp:
+    secs: 47
+    nanos: 167094634
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: kickOff
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 600
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: !started
+      remaining:
+      - 10
+      - 0
+      runCondition: always
+      behaviorAtZero: !expire
+      - type: finishSetPlay
+        args: null
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 57
+    nanos: 167094634
+  entry: !action
+    source: timer
+    action:
+      type: finishSetPlay
+      args: null
+- timestamp:
+    secs: 57
+    nanos: 167094634
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 590
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 78
+    nanos: 236959389
+  entry: !action
+    source: user
+    action:
+      type: penalize
+      args:
+        side: home
+        player: 1
+        call: pushing
+- timestamp:
+    secs: 78
+    nanos: 236959389
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 568
+      - 930135245
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 1
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 45
+            - 0
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 81
+    nanos: 896210910
+  entry: !action
+    source: user
+    action:
+      type: penalize
+      args:
+        side: home
+        player: 2
+        call: pushing
+- timestamp:
+    secs: 81
+    nanos: 896210910
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 565
+      - 270883724
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 2
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 41
+            - 340748479
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 55
+            - 0
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 83
+    nanos: 512948661
+  entry: !action
+    source: user
+    action:
+      type: penalize
+      args:
+        side: home
+        player: 3
+        call: pushing
+- timestamp:
+    secs: 83
+    nanos: 512948661
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 563
+      - 654145973
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 3
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 39
+            - 724010728
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 53
+            - 383262249
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 65
+            - 0
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 84
+    nanos: 928820138
+  entry: !action
+    source: user
+    action:
+      type: penalize
+      args:
+        side: home
+        player: 4
+        call: pushing
+- timestamp:
+    secs: 84
+    nanos: 928820138
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 562
+      - 238274496
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 4
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 38
+            - 308139251
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 51
+            - 967390772
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 63
+            - 584128523
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 75
+            - 0
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 86
+    nanos: 393276190
+  entry: !action
+    source: user
+    action:
+      type: penalize
+      args:
+        side: home
+        player: 5
+        call: pushing
+- timestamp:
+    secs: 86
+    nanos: 393276190
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 560
+      - 773818444
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 5
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 36
+            - 843683199
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 50
+            - 502934720
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 62
+            - 119672471
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 73
+            - 535543948
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 85
+            - 0
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 88
+    nanos: 239980076
+  entry: !action
+    source: user
+    action:
+      type: penalize
+      args:
+        side: home
+        player: 6
+        call: pushing
+- timestamp:
+    secs: 88
+    nanos: 239980076
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 558
+      - 927114558
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 6
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 34
+            - 996979313
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 48
+            - 656230834
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 60
+            - 272968585
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 71
+            - 688840062
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 83
+            - 153296114
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 95
+            - 0
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 132
+    nanos: 445649713
+  entry: !action
+    source: user
+    action:
+      type: unpenalize
+      args:
+        side: home
+        player: 1
+- timestamp:
+    secs: 132
+    nanos: 445649713
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 514
+      - 721444921
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 6
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 4
+            - 450561197
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 16
+            - 67298948
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 27
+            - 483170425
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 38
+            - 947626477
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 50
+            - 794330363
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 139
+    nanos: 945330501
+  entry: !action
+    source: user
+    action:
+      type: finishHalf
+      args: null
+- timestamp:
+    secs: 139
+    nanos: 945330501
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: finished
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 507
+      - 221764133
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: !started
+      remaining:
+      - 600
+      - 0
+      runCondition: always
+      behaviorAtZero: overflow
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 6
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: playerPushing
+          penaltyTimer: stopped
+        - penalty: playerPushing
+          penaltyTimer: stopped
+        - penalty: playerPushing
+          penaltyTimer: stopped
+        - penalty: playerPushing
+          penaltyTimer: stopped
+        - penalty: playerPushing
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 145
+    nanos: 848103671
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 1
+- timestamp:
+    secs: 145
+    nanos: 848103671
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 507
+      - 221764133
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 6
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 0
+            - 0
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 8
+            - 567618160
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 19
+            - 983489637
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 31
+            - 447945689
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 43
+            - 294649575
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 148
+    nanos: 91192466
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 1
+- timestamp:
+    secs: 148
+    nanos: 91192466
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 514
+      - 721444921
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 6
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 0
+            - 0
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 4
+            - 450561197
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 16
+            - 67298948
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 27
+            - 483170425
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 38
+            - 947626477
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 50
+            - 794330363
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 149
+    nanos: 873912612
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 1
+- timestamp:
+    secs: 149
+    nanos: 873912612
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 558
+      - 927114558
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 5
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 34
+            - 996979313
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 48
+            - 656230834
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 60
+            - 272968585
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 71
+            - 688840062
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 83
+            - 153296114
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 150
+    nanos: 681165315
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 1
+- timestamp:
+    secs: 150
+    nanos: 681165315
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 560
+      - 773818444
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 4
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 36
+            - 843683199
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 50
+            - 502934720
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 62
+            - 119672471
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 73
+            - 535543948
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 150
+    nanos: 847500242
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 1
+- timestamp:
+    secs: 150
+    nanos: 847500242
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 562
+      - 238274496
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 3
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 38
+            - 308139251
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 51
+            - 967390772
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 63
+            - 584128523
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 151
+    nanos: 32247678
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 1
+- timestamp:
+    secs: 151
+    nanos: 32247678
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 563
+      - 654145973
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 2
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 39
+            - 724010728
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 53
+            - 383262249
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 151
+    nanos: 171265253
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 1
+- timestamp:
+    secs: 151
+    nanos: 171265253
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 565
+      - 270883724
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 1
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: playerPushing
+          penaltyTimer: !started
+            remaining:
+            - 41
+            - 340748479
+            runCondition: readyOrPlaying
+            behaviorAtZero: clip
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 151
+    nanos: 323660486
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 1
+- timestamp:
+    secs: 151
+    nanos: 323660486
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 568
+      - 930135245
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 151
+    nanos: 455800077
+  entry: !action
+    source: user
+    action:
+      type: undo
+      args:
+        states: 1
+- timestamp:
+    secs: 151
+    nanos: 455800077
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: set
+    setPlay: kickOff
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 600
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: !started
+      remaining:
+      - 0
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 153
+    nanos: 74766065
+  entry: !action
+    source: user
+    action:
+      type: freeSetPlay
+      args: null
+- timestamp:
+    secs: 153
+    nanos: 74766065
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: kickOff
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 600
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: !started
+      remaining:
+      - 10
+      - 0
+      runCondition: always
+      behaviorAtZero: !expire
+      - type: finishSetPlay
+        args: null
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 163
+    nanos: 74766065
+  entry: !action
+    source: timer
+    action:
+      type: finishSetPlay
+      args: null
+- timestamp:
+    secs: 163
+    nanos: 74766065
+  entry: !gameState
+    sides: homeDefendsLeftGoal
+    phase: firstHalf
+    state: playing
+    setPlay: noSetPlay
+    kickingSide: home
+    primaryTimer: !started
+      remaining:
+      - 590
+      - 0
+      runCondition: playing
+      behaviorAtZero: overflow
+    secondaryTimer: stopped
+    timeoutRewindTimer: stopped
+    teams:
+      home:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+      away:
+        goalkeeper: 1
+        score: 0
+        penaltyCounter: 0
+        timeoutBudget: 1
+        messageBudget: 1200
+        illegalCommunication: false
+        penaltyShot: 0
+        penaltyShotMask: 0
+        players:
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: noPenalty
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+        - penalty: substitute
+          penaltyTimer: stopped
+- timestamp:
+    secs: 218
+    nanos: 665240915
+  entry: end
